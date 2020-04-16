@@ -1,0 +1,7 @@
+/datasets/mini_test/DEP-256x256
+/datasets/mini_test/SYN-256x256
+/datasets/mini_test/S2R-256x256
+/datasets/mini_test/Real-256x256
+/datasets/mini_real
+*.h5
+*.pth
