@@ -1,0 +1,15 @@
+micro_test/Real-256x256/LFVL_002_5.jpg; micro_test/Real-256x256/LFVL_002_5.jpg
+micro_test/Real-256x256/LFVL_007_5.jpg; micro_test/Real-256x256/LFVL_007_5.jpg
+micro_test/Real-256x256/LFVL_015_5.jpg; micro_test/Real-256x256/LFVL_015_5.jpg
+micro_test/Real-256x256/LFVL_034_5.jpg; micro_test/Real-256x256/LFVL_034_5.jpg
+micro_test/Real-256x256/LFVL_039_5.jpg; micro_test/Real-256x256/LFVL_039_5.jpg
+micro_test/Real-256x256/s001_der_130.jpg; micro_test/Real-256x256/s001_der_130.jpg
+micro_test/Real-256x256/s003_der_130.jpg; micro_test/Real-256x256/s003_der_130.jpg
+micro_test/Real-256x256/s005_der_330.jpg; micro_test/Real-256x256/s005_der_330.jpg
+micro_test/Real-256x256/s007_der_130.jpg; micro_test/Real-256x256/s007_der_130.jpg
+micro_test/Real-256x256/s009_der_130.jpg; micro_test/Real-256x256/s009_der_130.jpg
+micro_test/Real-256x256/s018_der_130.jpg; micro_test/Real-256x256/s018_der_130.jpg
+micro_test/Real-256x256/s034_der_130.jpg; micro_test/Real-256x256/s034_der_130.jpg
+micro_test/Real-256x256/s072_der_130.jpg; micro_test/Real-256x256/s072_der_130.jpg
+micro_test/Real-256x256/s103_der_130.jpg; micro_test/Real-256x256/s103_der_130.jpg
+micro_test/Real-256x256/s112_der_130.jpg; micro_test/Real-256x256/s112_der_130.jpg
