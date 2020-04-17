@@ -43,6 +43,7 @@ python -m visdom.server
 Then, in a separate terminal window, enter the pytorch environment:
 ```
 source activate pytorch
+cd T2Net
 ```
 
 ##### Predicting depth from iris images:
@@ -53,7 +54,6 @@ You can predict the depthmaps of all the images in a folder using:
 You can do the same using a .txt file with the list of the images:  
 ```
  python test_real.py --name irisT2Net --model test --batchSize 4 --dataset_root ../datasets/ --img_target_file data/mini_test/Real-256.txt --results_dir mini_test1
-
 ```
 
 ##### Translating synthetic images:
@@ -74,3 +74,34 @@ This is the command we used to train irisT2Net:
 ```
 python train.py --name irisT2Net --niter 6 --niter_decay 6 --model wsupervised --dataset_root ../datasets/  --img_source_file data/iris_256x256/SYN-256_tra.txt --img_target_file data/iris_256x256/DD3-256_tra.txt --lab_source_file data/iris_256x256/DEP-256_tra.txt --lab_target_file data/iris_256x256/DD3-256_tra.txt --display_freq 100 --batchSize 4
 ```
+
+### Using DenseDepth and irisDepth
+We obtained the best results by merging the GAN of T^2Net with the depth prediction architecture of DenseDepth.
+
+First, activate the tensorflow environment
+```
+source activate tensorflow
+cd DenseDepth
+```
+
+##### Predicting depth from iris images:
+You can predict the depthmaps of all the images in a folder using:  
+```
+python evalFolder.py --model models/irisDepth.h5 --inputs ../datasets/micro_test/Real-256x256  --result_dir results/irisDepth/micro_test1
+```
+
+Alternatively, you can load the image list from a .txt file:
+```
+python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_test/micro_S2R.txt  --result_dir results/irisDepth/micro_test2
+```
+
+##### Training irisDepth:
+irisDepth is trained with synthetic images translated by T2Net as the input, and the ground truth depthmpas of the synthetic images as the target. To train irisDepth you need to specify a .txt with the path of those images. In each line of the file must contain the input path and the target path separated by a semicolon and a space: "; ". At the moment, the file location is hard coded in data.py.
+
+Also, at the moment, you have to continue training from any checkpoint so that the network can save the json after finishing training. For example, here we are training irisDepth from the checkpoints of DenseDepth_vanilla:  
+```
+python train.py --data iris --gpus 1 --bs 8 --epochs 10 --checkpoint models/DenseDepth_vanilla.h5 --name irisDepth
+```
+
+##### Obtaining the iris 3D model:
+We will upload the Matlab code to create an iris 3D model, using (4), (5) and (6) from the paper.
