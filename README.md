@@ -1,7 +1,7 @@
 # irisDepth
 This repository corresponds to the journal article:
 **A 3D Iris Scanner from a Single Image using Convolutional Neural Networks.**
-The paper is currently at revision stage at IEEE Access journal.
+The paper is currently in revision stage at IEEE Access journal.
 
 Authors: Daniel Benalcazar, Jorge Zambrano, Diego Bastias, Claudio Perez and Kevin Bowyer
 
@@ -77,7 +77,7 @@ python train.py --name irisT2Net --niter 6 --niter_decay 6 --model wsupervised -
 
 
 ### Using DenseDepth and irisDepth
-We obtained the best results by merging the GAN of T^2Net with the depth prediction architecture of DenseDepth.
+We obtained the best results by merging the GAN of T2Net with the depth prediction architecture of DenseDepth.
 
 First, activate the tensorflow environment
 ```
@@ -113,14 +113,14 @@ The function **rgbd2mesh.m** produces the 3D model. You can use it to obtain bot
 
 The point cloud model is obtained using:
 ```
-[pts, colors, normals] = rgbd2mesh(image, depthmap, XYscale, Zscale)
+[pts, colors, normals] = rgbd2mesh(image, depthmap)
 pc = pointCloud(pts, 'Color', colors, 'Normal', normals);
 pcwrite(pc, 'file_name.ply');
 ```
 
 The mesh model is obtained using:
 ```
-[verts, colors, normals, faces] = rgbd2mesh(image, depthmap, XYscale, Zscale)
+[verts, colors, normals, faces] = rgbd2mesh(image, depthmap)
 plywrite2('file_name.ply', faces, verts, colors, normals);
 ```
 
@@ -130,5 +130,6 @@ The script in **Iris_3D_model_from_folder.m** helps producing the iris 3D models
 
 
 ### Citation:
-You can cite our work as:
+You can cite our work in IEEE format as:
+
 D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” Submitt. Publ.
