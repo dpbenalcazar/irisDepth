@@ -3,7 +3,7 @@
 /datasets/mini_test/S2R-256x256
 /datasets/mini_test/Real-256x256
 /datasets/mini_real
-/3D Iris in Matlab/Results/
+/3D Iris in Matlab/Results/*
 *.h5
 *.pth
 *.asv
