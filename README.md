@@ -75,6 +75,7 @@ This is the command we used to train irisT2Net:
 python train.py --name irisT2Net --niter 6 --niter_decay 6 --model wsupervised --dataset_root ../datasets/  --img_source_file data/iris_256x256/SYN-256_tra.txt --img_target_file data/iris_256x256/DD3-256_tra.txt --lab_source_file data/iris_256x256/DEP-256_tra.txt --lab_target_file data/iris_256x256/DD3-256_tra.txt --display_freq 100 --batchSize 4
 ```
 
+
 ### Using DenseDepth and irisDepth
 We obtained the best results by merging the GAN of T^2Net with the depth prediction architecture of DenseDepth.
 
@@ -103,5 +104,31 @@ Also, at the moment, you have to continue training from any checkpoint so that t
 python train.py --data iris --gpus 1 --bs 8 --epochs 10 --checkpoint models/DenseDepth_vanilla.h5 --name irisDepth
 ```
 
-##### Obtaining the iris 3D model:
-We will upload the Matlab code to create an iris 3D model, using (4), (5) and (6) from the paper.
+
+### Obtaining iris 3D models:
+The iris 3D models are obtained by extruding the depth information from the RGB image. We have used Matlab to produce and analyze the iris 3D models.
+
+
+The function **rgbd2mesh.m** produces the 3D model. You can use it to obtain both the point cloud and the mesh models. The mesh model is computationally expensive tough. It uses the square connectivity of the neighboring pixels in the original image.
+
+The point cloud model is obtained using:
+```
+[pts, colors, normals] = rgbd2mesh(image, depthmap, XYscale, Zscale)
+pc = pointCloud(pts, 'Color', colors, 'Normal', normals);
+pcwrite(pc, 'file_name.ply');
+```
+
+The mesh model is obtained using:
+```
+[verts, colors, normals, faces] = rgbd2mesh(image, depthmap, XYscale, Zscale)
+plywrite2('file_name.ply', faces, verts, colors, normals);
+```
+
+The script in **Iris_3D_model_from_depthmap.m** illustrates how to obtain the iris 3D model from one input image and a depthmap.
+
+The script in **Iris_3D_model_from_folder.m** helps producing the iris 3D models for all the images in a folder. The corresponding depthmaps should be in a different folder with the same order. See the script for more instructions.
+
+
+### Citation:
+You can cite our work as:
+D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” Submitt. Publ.
