@@ -29,10 +29,11 @@ pc = pointCloud(verts, 'Color', colors, 'Normal', normals);
 file3 = ['Results/',ID,'_ptcl.ply'];
 pcwrite(pc, file3);
 
-% % Seve as 3D Mesh:
+% Seve as 3D Mesh:
 file4 = ['Results/',ID,'_mesh.ply'];
 plywrite2(file4, faces, verts, colors, normals);
 
-% Show Point Cloud:
+% Show Point Cloud model:
 pcshow(pc,'MarkerSize',20)
-title(dash2space(ID))
+title(dash2space(ID));
+drawnow;
