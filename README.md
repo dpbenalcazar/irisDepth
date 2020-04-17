@@ -1,13 +1,13 @@
 # irisDepth
 This repository corresponds to the journal article:
-**A 3D Iris Scanner from a Single Image using Convolutional Neural Networks**
-It is currently at revision stage at IEEE Access journal.
+**A 3D Iris Scanner from a Single Image using Convolutional Neural Networks.**
+The paper is currently at revision stage at IEEE Access journal.
 
 Authors: Daniel Benalcazar, Jorge Zambrano, Diego Bastias, Claudio Perez and Kevin Bowyer
 
 The code in this repository is heavily based on T2Net and DenseDepth
-  -T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is available at:https://github.com/lyndonzheng/Synthetic2Realistic
-  -DenseDepth by Ibraheem Alhashim and Peter Wonka is avalible at: https://github.com/ialhashim/DenseDepth
+  - T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is available at:https://github.com/lyndonzheng/Synthetic2Realistic
+  - DenseDepth by Ibraheem Alhashim and Peter Wonka is avalible at: https://github.com/ialhashim/DenseDepth
 
 ### Installing the repository
 We suggest that you create two separate environments, one for pytorch, and one for tensorflow. The main architecture for training with synthetic and real iris images is based on T2Net. This network is in pytorch. In order to improve the results, we trained DenseDepth over translated images by T2Net. We call this network irisDepth, and it is in tensorflow at the moment. If you are only interested in irisDepth, you only need tensorflow.
