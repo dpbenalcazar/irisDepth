@@ -19,7 +19,7 @@ You will need to install: pytorch, cuda 10, visdom, pillow, imageio, and numpy
 You will need to install: tensorflow 1.13, keras, cuda 10, pillow, and numpy  
 
 ##### Networks and weights:
-Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, are available at:
+Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
 https://drive.google.com/drive/folders/1W6yxefISGz-kx6jJcNSFgD3-Ea9pbEZU?usp=sharing
 
 ##### Real and synthetic iris datasets
