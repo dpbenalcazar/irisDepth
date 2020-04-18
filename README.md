@@ -13,10 +13,10 @@ The code in this repository is heavily based on T2Net and DenseDepth
 We suggest that you create two separate environments, one for pytorch, and one for tensorflow. The main architecture for training with synthetic and real iris images is based on T2Net. This network is in pytorch. In order to improve the results, we trained DenseDepth over translated images by T2Net. We call this network irisDepth, and it is in tensorflow at the moment. If you are only interested in irisDepth, you only need tensorflow.
 
 ##### Dependencies for the pytorch envirnoment:
-You will need to install: pytorch, cuda 10, visdom, pillow, imageio, and numpy  
+You will need to install: pytorch, cuda 10, visdom, pillow, and numpy  
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow 1.13, keras, cuda 10, pillow, and numpy  
+You will need to install: tensorflow 1.12.0, keras 2.2.3, cuda 10,  imageio, and numpy  
 
 ##### Networks and weights:
 Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
@@ -24,7 +24,7 @@ https://drive.google.com/drive/folders/1W6yxefISGz-kx6jJcNSFgD3-Ea9pbEZU?usp=sha
 
 ##### Real and synthetic iris datasets
 This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, as well as the full synthetic image dataset with 72,000 images please go to:
-https://drive.google.com/drive/folders/1W6yxefISGz-kx6jJcNSFgD3-Ea9pbEZU?usp=sharing
+https://drive.google.com/open?id=1IyLHCaVNPKhlF2B2iX-y_mnN3Ay62q7P
 
 Unfortunately, we cannot publish the real iris dataset with 120 subjects and 26,520 images here. That is because we only have written consent from the volunteers to use the dataset in our paper, but we don't have consent to publish their images.  
 
@@ -33,7 +33,7 @@ The virtual iris dataset of 100 3D models sculpted in Blender is available at:
 https://drive.google.com/drive/folders/1teohEBFo03j3kErZn1DBspypa32sOhve?usp=sharing
 
 
-### Using T2Net
+## Using T2Net
 Once you have set up this repository with network weights and images, it is time to test it. In this research we used T2Net to predict the depth of the human iris using synthetic and real images. You can use and train our networks with the following commands. They assume you are in irisDepth-main directory.
 
 First, you need to run visdom. Otherwise, you will be prompted to warning and error messages.
@@ -76,7 +76,7 @@ python train.py --name irisT2Net --niter 6 --niter_decay 6 --model wsupervised -
 ```
 
 
-### Using DenseDepth and irisDepth
+## Using DenseDepth and irisDepth
 We obtained the best results by merging the GAN of T2Net with the depth prediction architecture of DenseDepth.
 
 First, activate the tensorflow environment
@@ -88,12 +88,12 @@ cd DenseDepth
 ##### Predicting depth from iris images:
 You can predict the depthmaps of all the images in a folder using:  
 ```
-python evalFolder.py --model models/irisDepth.h5 --inputs ../datasets/micro_test/Real-256x256  --result_dir results/irisDepth/micro_test1
+python evalFolder.py --model models/irisDepth.h5 --inputs ../datasets/Real-256x256  --result_dir results/irisDepth/micro_Real
 ```
 
 Alternatively, you can load the image list from a .txt file:
 ```
-python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_test/micro_S2R.txt  --result_dir results/irisDepth/micro_test2
+python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_S2R.txt  --result_dir results/irisDepth/micro_S2R
 ```
 
 ##### Training irisDepth:
@@ -105,7 +105,7 @@ python train.py --data iris --gpus 1 --bs 8 --epochs 10 --checkpoint models/Dens
 ```
 
 
-### Obtaining iris 3D models:
+## Obtaining iris 3D models:
 The iris 3D models are obtained by extruding the depth information from the RGB image. We have used Matlab to produce and analyze the iris 3D models.
 
 

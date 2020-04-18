@@ -28,8 +28,13 @@ def iris_resize(img, resolution=256, padding=6):
 
 
 def get_iris_data(batch_size, iris_data_directory='iris'):
-    data_train = open('data/irisDepth_tra.txt','rb').read() # data_train = open('data/Vanilla_tra.txt','rb').read()
-    data_test  = open('data/irisDepth_val.txt','rb').read() # data_test  = open('data/Vanilla_val.txt.txt','rb').read()
+    # Train in the micro dataset:
+    data_train = open('data/micro_test/micro_S2R.txt','rb').read()
+    data_test  = open('data/micro_test/micro_S2R.txt','rb').read()
+
+    # Train using the complete dataset
+    # data_train = open('data/irisDepth_tra.txt','rb').read() # data_train = open('data/Vanilla_tra.txt','rb').read()
+    # data_test  = open('data/irisDepth_val.txt','rb').read() # data_test  = open('data/Vanilla_val.txt.txt','rb').read()
 
     iris_train = list((row.split('; ') for row in data_train.decode("utf-8").split('\n') if len(row) > 0))
     iris_test = list((row.split('; ') for row in data_test.decode("utf-8").split('\n') if len(row) > 0))
@@ -73,8 +78,8 @@ class Iris_BasicRGBSequence(Sequence):
 
             sample = self.dataset[index]
 
-            x = np.clip(np.asarray(Image.open( '../datasets/' + sample[0] )).reshape(384,384,3)/255 , 0, 1)
-            y = np.clip(np.asarray(Image.open( '../datasets/' + sample[1]).convert(mode='L')).reshape(384,384,1)*1.0 , 0, self.maxDepth) 
+            x = np.clip(np.asarray(Image.open( '../datasets/' + sample[0] ).resize([384,384])).reshape(384,384,3)/255 , 0, 1)
+            y = np.clip(np.asarray(Image.open( '../datasets/' + sample[1]).convert(mode='L').resize([192,192])).reshape(192,192,1)*1.0 , 0, self.maxDepth) 
             #print(np.min(y), np.max(y))
             y = DepthNorm(y, maxDepth=self.maxDepth)
 
