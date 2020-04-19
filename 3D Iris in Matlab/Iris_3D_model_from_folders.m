@@ -9,7 +9,7 @@ fold_rgb = '../datasets/micro_test/S2R-256x256/';
 fold_dep = '../datasets/micro_test/DEP-256x256/';
 
 % Output folder:
-fold_m3d = 'Results/micro_test/';
+fold_m3d = 'results/micro_test/';
 mkdir(fold_m3d);
 
 % Define scales along XY plane and Z axis:
@@ -22,7 +22,7 @@ Files_dep = dir([fold_dep, '*g']);
 Nf = length(Files_rgb);
 
 % Wait-bar:
-w = 0; dw = 1/Nf; 
+w = 0; dw = 1/Nf;
 wb_title = ['Completed Iris 3D Models: 0 of ', num2str(Nf)];
 wb = waitbar(w, wb_title);
 
@@ -33,7 +33,7 @@ for f = 1:Nf
     [H,W,~] = size(img);
 
     % Obtain the iris 3D model:
-    [verts, colors, normals] = rgbd2mesh(img, dep, XYscale, Zscale); 
+    [verts, colors, normals] = rgbd2mesh(img, dep, XYscale, Zscale);
     pc = pointCloud(verts, 'Color', colors, 'Normal', normals);
 
     % Save as 3D Point Cloud:
@@ -47,4 +47,3 @@ for f = 1:Nf
     waitbar(w, wb, wb_title);
 end
 close(wb)
-            

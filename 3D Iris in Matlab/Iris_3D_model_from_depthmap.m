@@ -10,7 +10,7 @@ file1 = '../datasets/micro_test/S2R-256x256/Ren256x256_IT024_C2_E10_R088_fake.pn
 file2 = '../datasets/micro_test/DEP-256x256/Dep256x256_IT024_E10_R088.png';
 
 % Output ID for saving the 3D model:
-ID = 'S2R_IT024_C2_E10_R088'; % ID = 'SYN_IT024_C2_E10_R088'; 
+ID = 'S2R_IT024_C2_E10_R088'; % ID = 'SYN_IT024_C2_E10_R088';
 
 % Read Image and Depthmap:
 img = imread(file1);
@@ -22,15 +22,15 @@ XYscale = 13.4737/H;
 Zscale = 1.9355;
 
 % Obtain the iris 3D model:
-[verts, colors, normals, faces] = rgbd2mesh(img, dep, XYscale, Zscale); 
+[verts, colors, normals, faces] = rgbd2mesh(img, dep, XYscale, Zscale);
 
 % Save as 3D Point Cloud:
 pc = pointCloud(verts, 'Color', colors, 'Normal', normals);
-file3 = ['Results/',ID,'_ptcl.ply'];
+file3 = ['results/',ID,'_ptcl.ply'];
 pcwrite(pc, file3);
 
 % Seve as 3D Mesh:
-file4 = ['Results/',ID,'_mesh.ply'];
+file4 = ['results/',ID,'_mesh.ply'];
 plywrite2(file4, faces, verts, colors, normals);
 
 % Show Point Cloud model:
