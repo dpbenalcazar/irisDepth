@@ -49,11 +49,11 @@ cd T2Net
 ##### Predicting depth from iris images:
 You can predict the depthmaps of all the images in a folder using:  
 ```
- python test_real.py --name irisT2Net --model test --batchSize 4 --img_target_file ../datasets/micro_test/Real-256x256 --results_dir micro_test1
+ python test_real.py --name irisT2Net --model test --img_target_file ../datasets/micro_test/Real-256x256 --results_dir micro_test1
 ```
 You can do the same using a .txt file with the list of the images:  
 ```
- python test_real.py --name irisT2Net --model test --batchSize 4 --dataset_root ../datasets/ --img_target_file data/mini_test/Real-256.txt --results_dir mini_test1
+ python test_real.py --name irisT2Net --model test --dataset_root ../datasets/ --img_target_file data/mini_test/Real-256.txt --results_dir mini_test1
 ```
 
 ##### Translating synthetic images:
