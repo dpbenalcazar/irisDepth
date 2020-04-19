@@ -16,7 +16,7 @@ We suggest that you create two separate environments, one for pytorch, and one f
 You will need to install: pytorch, cuda 10, visdom, pillow, and numpy  
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow 1.12.0, keras 2.2.3, cuda 10,  imageio, and numpy  
+You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10,  imageio, and numpy  
 
 ##### Networks and weights:
 Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
@@ -88,12 +88,12 @@ cd DenseDepth
 ##### Predicting depth from iris images:
 You can predict the depthmaps of all the images in a folder using:  
 ```
-python evalFolder.py --model models/irisDepth.h5 --inputs ../datasets/Real-256x256  --result_dir results/irisDepth/micro_Real
+python evalFolder.py --model models/irisDepth.h5 --inputs ../datasets/micro_test/Real-256x256  --result_dir results/irisDepth/micro_Real
 ```
 
 Alternatively, you can load the image list from a .txt file:
 ```
-python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_S2R.txt  --result_dir results/irisDepth/micro_S2R
+python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_S2R.txt --root_dir ../datasets/ --result_dir results/irisDepth/micro_S2R
 ```
 
 ##### Training irisDepth:

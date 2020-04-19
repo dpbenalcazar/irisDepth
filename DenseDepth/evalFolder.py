@@ -54,12 +54,15 @@ gt_img = []
 
 if inputImages.find('.txt') != -1:
     text = open(inputImages,'rb').read()
-    paths_AB = list((row.split(';') for row in text.decode("utf-8").split('\r\n') if len(row) > 0))
+    paths_AB = list((row.split('; ') for row in text.decode("utf-8").split('\n') if len(row) > 0))
 
     for path_A, path_B in paths_AB:
-        inp_img.append(root_dir + path_A.strip())
-        opt_img.append(result_dir + path_A[-37:])
-        gt_img.append(root_dir + path_B.strip())
+        path = os.path.join(root_dir , path_A.strip())
+        inp_img.append(path)
+        path = os.path.join(result_dir , path_A[-37:])
+        opt_img.append(path)
+        path = os.path.join(root_dir , path_B.strip())
+        gt_img.append(path)
 
 else:
     for root, _, fnames in os.walk(inputImages):
@@ -94,7 +97,7 @@ for i in range(Nb):
         im = im.resize([width, height])
         im.save(opt_img[c])
         c = c+1
-    print('  - Batch {} de {}'.format(i,Nb))
+    print('  - Batch {} of {}'.format(i+1,Nb))
 
 end = time.time()
 print('\nTest time {:0.1f} s'.format(end-start))
