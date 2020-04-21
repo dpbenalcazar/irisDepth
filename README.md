@@ -23,7 +23,10 @@ Then, you can clone this repository to your convenience. The networks and weigth
 https://drive.google.com/drive/folders/1W6yxefISGz-kx6jJcNSFgD3-Ea9pbEZU?usp=sharing
 
 ##### Real and synthetic iris datasets
-This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, as well as the full synthetic image dataset with 72,000 images please go to:
+This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, please go to:
+https://drive.google.com/drive/folders/1o6uPcxTo7TefNoRWasr5BCI4RBftN5Xo?usp=sharing
+
+For the full synthetic image dataset with 72,000 images please go to:
 https://drive.google.com/open?id=1IyLHCaVNPKhlF2B2iX-y_mnN3Ay62q7P
 
 Unfortunately, we cannot publish the real iris dataset with 120 subjects and 26,520 images here. That is because we only have written consent from the volunteers to use the dataset in our paper, but we don't have consent to publish their images.  
