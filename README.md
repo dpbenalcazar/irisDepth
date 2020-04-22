@@ -104,7 +104,7 @@ irisDepth is trained with synthetic images translated by T2Net as the input, and
 
 Also, at the moment, you have to continue training from any checkpoint so that the network can save the json after finishing training. For example, here we are training irisDepth from the checkpoints of DenseDepth_vanilla:  
 ```
-python train.py --data iris --gpus 1 --bs 2 --epochs 1 --checkpoint models/nyu.h5 --name irisTest
+python train.py --data iris --gpus 1 --bs 2 --epochs 1 --checkpoint checkpoints/nyu.h5 --name irisTest
 ```
 
 

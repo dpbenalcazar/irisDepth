@@ -1,3 +1,4 @@
+#['train.py', '--data', 'iris', '--gpus', '1', '--bs', '2', '--epochs', '1', '--checkpoint', 'models/nyu.h5', '--name', 'irisTest']
 import os, sys, glob, time, pathlib, argparse
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
 
@@ -14,19 +15,17 @@ from keras.utils.vis_utils import plot_model
 
 # Argument Parser
 parser = argparse.ArgumentParser(description='High Quality Monocular Depth Estimation via Transfer Learning')
-parser.add_argument('--data', default='iris', type=str, help='Training dataset (iris|nyu|unreal)')
+parser.add_argument('--data', default='iris', type=str, help='Training dataset.')
 parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate')
 parser.add_argument('--bs', type=int, default=4, help='Batch size')
 parser.add_argument('--epochs', type=int, default=50, help='Number of epochs')
 parser.add_argument('--gpus', type=int, default=1, help='The number of GPUs to use')
 parser.add_argument('--gpuids', type=str, default='0', help='IDs of GPUs to use')
-parser.add_argument('--mindepth', type=float, default=0.0, help='Minimum of input depth')
-parser.add_argument('--maxdepth', type=float, default=255.0, help='Maximum of input depth')
-parser.add_argument('--name', type=str, default='irisTest', help='A name to attach to the training session')
-parser.add_argument('--checkpoint', type=str, default='', help='Start training from an existing model')
-parser.add_argument('--full', dest='full', action='store_true', help='Full training with metrics, checkpoints, and image samples')
-# parser.add_argument('--tr_data', type=str', default='data/micro_S2R.txt', help='Training folder or text file')
-# parser.add_argument('--data_root', type=str', default='../datasets/', help='Root dir for training data')
+parser.add_argument('--mindepth', type=float, default=10.0, help='Minimum of input depths')
+parser.add_argument('--maxdepth', type=float, default=1000.0, help='Maximum of input depths')
+parser.add_argument('--name', type=str, default='irisdepthB', help='A name to attach to the training session')
+parser.add_argument('--checkpoint', type=str, default='', help='Start training from an existing model.')
+parser.add_argument('--full', dest='full', action='store_true', help='Full training with metrics, checkpoints, and image samples.')
 
 args = parser.parse_args()
 
@@ -43,11 +42,12 @@ model = create_model( existing=args.checkpoint , is_halffeatures=False)
 # Data loaders
 if args.data == 'nyu': train_generator, test_generator = get_nyu_train_test_data( args.bs )
 if args.data == 'unreal': train_generator, test_generator = get_unreal_train_test_data( args.bs )
+if args.data == 'walmart': train_generator, test_generator = get_walmart_train_test_data( args.bs )
 if args.data == 'iris': train_generator, test_generator = get_iris_train_test_data( args.bs )
 
 # Training session details
 runID = str(int(time.time())) + '-n' + str(len(train_generator)) + '-e' + str(args.epochs) + '-bs' + str(args.bs) + '-lr' + str(args.lr) + '-' + args.name
-outputPath = './checkpoints/'
+outputPath = './models/'
 runPath = outputPath + runID
 pathlib.Path(runPath).mkdir(parents=True, exist_ok=True)
 print('Output: ' + runPath)
