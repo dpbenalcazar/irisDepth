@@ -1,3 +1,4 @@
+#['train.py', '--data', 'iris', '--gpus', '1', '--bs', '2', '--epochs', '2', '--checkpoint', 'models/nyu.h5', '--name', 'irisTest']
 import os, sys, glob, time, pathlib, argparse
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
 
@@ -78,7 +79,7 @@ print('\n\n\n', 'Compiling model..', runID, '\n\n\tGPU ' + (str(args.gpus)+' gpu
         + '\t\tBatch size [ ' + str(args.bs) + ' ] ' + ' \n\n')
 model.compile(loss=depth_loss_function, optimizer=optimizer)
 
-print('Ready for training\n')
+print('Ready for training!\n')
 
 # Callbacks
 callbacks = []
@@ -88,10 +89,9 @@ if args.data == 'unreal': callbacks = get_nyu_callbacks(model, basemodel, train_
 callbacks = None
 # Start training
 model.fit_generator(train_generator, callbacks=callbacks, validation_data=test_generator, epochs=args.epochs, shuffle=False)
-print("Training done!\n")
+
 # Save the final trained model:
-print("Saving trained model ...")
-basemodel.save(runPath + '/irisTest.h5') #basemodel.save(runPath + '/modeloB.h5')
+basemodel.save(runPath + '/dil_norm_der.h5') #basemodel.save(runPath + '/modeloB.h5')
 
 # Despedida:
-print('Training successful!! XD')
+print('Entrenamiento Listo!!!!!!!!!!! XD')

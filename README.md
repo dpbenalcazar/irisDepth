@@ -16,7 +16,7 @@ We suggest that you create two separate environments, one for pytorch, and one f
 You will need to install: pytorch, cuda 10, visdom, pillow, and numpy  
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10,  imageio, and numpy  
+You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10,  imageio, and numpy   1.16
 
 ##### Networks and weights:
 Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
@@ -104,7 +104,7 @@ irisDepth is trained with synthetic images translated by T2Net as the input, and
 
 Also, at the moment, you have to continue training from any checkpoint so that the network can save the json after finishing training. For example, here we are training irisDepth from the checkpoints of DenseDepth_vanilla:  
 ```
-python train.py --data iris --gpus 1 --bs 8 --epochs 10 --checkpoint models/DenseDepth_vanilla.h5 --name irisDepth
+python train.py --data iris --gpus 1 --bs 2 --epochs 1 --checkpoint models/nyu.h5 --name irisTest
 ```
 
 
