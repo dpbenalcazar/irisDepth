@@ -70,7 +70,7 @@ You can monitor the training using visdom by opening the browser of your choice 
 
 To train T2Net for 3 iterations you can use:
 ```
-python train.py --name t2n_micro --niter 2 --niter_decay 1 --model wsupervised --dataset_root ../datasets/  --img_source_file data/micro_test/SYN-256.txt --img_target_file data/micro_test/Real-256.txt --lab_source_file data/micro_test/DEP-256.txt --lab_target_file data/micro_test/Real-256.txt --display_freq 10 --batchSize 1
+python train.py --name t2n_micro --niter 2 --niter_decay 1 --model wsupervised --display_freq 10 --batchSize 1
 ```
 
 This is the command we used to train irisT2Net:
