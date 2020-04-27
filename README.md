@@ -16,7 +16,7 @@ We suggest that you create two separate environments, one for pytorch, and one f
 You will need to install: pytorch, cuda 10, visdom, pillow, and numpy  
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10,  imageio, and numpy   1.16
+You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10, opencv 3.4.2,  imageio, and numpy 1.16
 
 ##### Networks and weights:
 Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
