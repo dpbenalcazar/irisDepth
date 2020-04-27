@@ -1,0 +1,4 @@
+Please paste in this folder:
+DenseDepth_vanilla.h5
+irisDepth.h5
+nyu.h5

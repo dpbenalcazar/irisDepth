@@ -22,13 +22,13 @@ class BaseOptions():
         self.parser.add_argument('--model', type=str, default='wsupervised',
                                  help='choose which model to use, [supervised] | [wsupervised] | [test]')
         # data pattern define
-        self.parser.add_argument('--img_source_file', type=str, default='data/iris_256x256/SYN-256_tra.txt', #'data/iris_256x256/PLR-256x256_tra.txt', #'data/PLR-192x192_tra.txt'
+        self.parser.add_argument('--img_source_file', type=str, default='data/micro_test/SYN-256.txt', #'data/iris_256x256/PLR-256x256_tra.txt', #
                                  help='training and testing dataset for source domain')
-        self.parser.add_argument('--img_target_file', type=str, default='data/iris_256x256/DD3-256_tra.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #'data/DD1-192x192_tra.txt'
+        self.parser.add_argument('--img_target_file', type=str, default='data/micro_test/Real-256.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #
                                  help='training and testing dataset for target domain')
-        self.parser.add_argument('--lab_source_file', type=str, default='data/iris_256x256/DEP-256_tra.txt', #'data/iris_256x256/PLD-256x256_tra.txt', #'data/PLD-192x192_tra.txt'
+        self.parser.add_argument('--lab_source_file', type=str, default='data/micro_test/DEP-256.txt', #'data/iris_256x256/PLD-256x256_tra.txt', #
                                  help='training label for source domain')
-        self.parser.add_argument('--lab_target_file', type=str, default='data/iris_256x256/DD3-256_tra.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #'data/DD1-192x192_tra.txt'
+        self.parser.add_argument('--lab_target_file', type=str, default='data/micro_test/Real-256.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #
                                  help='training label for target domain')
         self.parser.add_argument('--dataset_mode', type=str, default='unpaired',
                                  help='chooses how datasets are loaded. [paired| unpaired]')

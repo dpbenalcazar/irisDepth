@@ -13,7 +13,15 @@ The code in this repository is heavily based on T2Net and DenseDepth
 We suggest that you create two separate environments, one for pytorch, and one for tensorflow. The main architecture for training with synthetic and real iris images is based on T2Net. This network is in pytorch. In order to improve the results, we trained DenseDepth over translated images by T2Net. We call this network irisDepth, and it is in tensorflow at the moment. If you are only interested in irisDepth, you only need tensorflow.
 
 ##### Dependencies for the pytorch envirnoment:
-You will need to install: pytorch, cuda 10, visdom, pillow, and numpy  
+You will need to install: pytorch, cuda, pillow, ,numpy, visdom, jsonpatch, and dominate
+
+Using anaconda in ubuntu:
+```
+conda create --name pytorch python=3.6 numpy=1.17 pillow=6
+source activate pytorch
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+conda install -c conda-forge imageio visdom jsonpatch dominate
+```
 
 ##### Dependencies for the tensorflow envirnoment:
 You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10, opencv 3.4.2,  imageio, and numpy 1.16
