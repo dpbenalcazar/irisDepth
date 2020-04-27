@@ -102,9 +102,9 @@ python evalFolder.py --model models/irisDepth.h5 --inputs data/micro_S2R.txt --r
 ##### Training irisDepth:
 irisDepth is trained with synthetic images translated by T2Net as the input, and the ground truth depthmpas of the synthetic images as the target. To train irisDepth you need to specify a .txt with the path of those images. In each line of the file must contain the input path and the target path separated by a semicolon and a space: "; ". At the moment, the file location is hard coded in data.py.
 
-Also, at the moment, you have to continue training from any checkpoint so that the network can save the json after finishing training. For example, here we are training irisDepth from the checkpoints of DenseDepth_vanilla:  
+Also, at the moment, you have to continue training from any checkpoint so that the network can save the json after finishing training. For example, here we are training irisDepth from the checkpoints of irisDepth:  
 ```
-python train.py --data iris --gpus 1 --bs 2 --epochs 1 --checkpoint checkpoints/nyu.h5 --name irisTest
+python train.py --data iris --gpus 1 --bs 2 --epochs 1 --checkpoint models/irisDepth.h5 --name irisTest
 ```
 
 
