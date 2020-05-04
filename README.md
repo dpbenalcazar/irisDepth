@@ -24,7 +24,15 @@ conda install -c conda-forge imageio visdom jsonpatch dominate
 ```
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow 1.13, keras 2.2.4, cuda 10, opencv 3.4.2,  imageio, and numpy 1.16
+You will need to install: tensorflow, keras, cuda, opencv,  imageio, and numpy
+
+Using anaconda in ubuntu:
+```
+conda create --name tensorflow python=3.6 numpy=1.16 imageio matplotlib 
+source activate tensorflow
+conda install -c conda-forge opencv=3.4.2 scikit-learn scikit-image
+conda install -c conda-forge tensorflow-gpu=1.13 keras=2.2.4 cudatoolkit=10.0
+```
 
 ##### Networks and weights:
 Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
