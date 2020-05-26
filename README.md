@@ -151,4 +151,4 @@ The script in **Iris_3D_model_from_folder.m** helps producing the iris 3D models
 ### Citation:
 You can cite our work in IEEE format as:
 
-D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” Submitt. Publ.
+D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” in IEEE Access, 2020.
