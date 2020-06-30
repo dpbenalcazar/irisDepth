@@ -1,9 +1,11 @@
 # irisDepth
 This repository corresponds to the journal article:
 **A 3D Iris Scanner from a Single Image using Convolutional Neural Networks.**
-The paper is currently in revision stage at IEEE Access journal.
+The paper has been published by the IEEE Access journal.
 
 Authors: Daniel Benalcazar, Jorge Zambrano, Diego Bastias, Claudio Perez and Kevin Bowyer
+
+Graphical Abstract: https://youtu.be/etUgDOl-U_w
 
 The code in this repository is heavily based on T2Net and DenseDepth
   - T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is available at:https://github.com/lyndonzheng/Synthetic2Realistic
@@ -151,4 +153,4 @@ The script in **Iris_3D_model_from_folder.m** helps producing the iris 3D models
 ### Citation:
 You can cite our work in IEEE format as:
 
-D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” in IEEE Access, 2020, doi: 10.1109/ACCESS.2020.2996563.
+D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” in IEEE Access, IEEE Access, vol. 8, no. 1, pp. 98584–98599, 2020, doi: 10.1109/ACCESS.2020.2996563.
