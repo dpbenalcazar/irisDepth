@@ -11,6 +11,8 @@
 /T2Net/results/*/*
 /T2Net/results/*/*/*
 /T2Net/results/*/*/*/*
+/T2Net/checkpoints/*/*
+/T2Net/checkpoints/*/web
 *.h5
 *.pth
 *.asv
