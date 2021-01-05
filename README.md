@@ -1,9 +1,11 @@
 # irisDepth
 This repository corresponds to the journal article:
 **A 3D Iris Scanner from a Single Image using Convolutional Neural Networks.**
-The paper is currently in revision stage at IEEE Access journal.
+The paper has been published by the IEEE Access journal.
 
 Authors: Daniel Benalcazar, Jorge Zambrano, Diego Bastias, Claudio Perez and Kevin Bowyer
+
+Graphical Abstract: https://youtu.be/etUgDOl-U_w
 
 The code in this repository is heavily based on T2Net and DenseDepth
   - T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is available at:https://github.com/lyndonzheng/Synthetic2Realistic
@@ -24,7 +26,7 @@ conda install -c conda-forge imageio visdom jsonpatch dominate
 ```
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow, keras, cuda, numpy, opencv,  pydot, scikit-image, and imageio 
+You will need to install: tensorflow, keras, cuda, numpy, opencv,  pydot, scikit-image, and imageio
 
 Using anaconda in ubuntu:
 ```
@@ -68,11 +70,11 @@ cd T2Net
 ##### Predicting depth from iris images:
 You can predict the depthmaps of all the images in a folder using:  
 ```
- python test_real.py --name irisT2Net --model test --img_target_file ../datasets/micro_test/Real-256x256 --results_dir micro_test1
+ python test_real.py --name irisT2Net --model test --img_target_file ../datasets/micro_test/Real-256x256 --results_dir results/micro_test1
 ```
 You can do the same using a .txt file with the list of the images:  
 ```
- python test_real.py --name irisT2Net --model test --dataset_root ../datasets/ --img_target_file data/mini_test/Real-256.txt --results_dir mini_test1
+ python test_real.py --name irisT2Net --model test --dataset_root ../datasets/ --img_target_file data/micro_test/Real-256.txt --results_dir results/micro_test2
 ```
 
 ##### Translating synthetic images:
@@ -151,4 +153,4 @@ The script in **Iris_3D_model_from_folder.m** helps producing the iris 3D models
 ### Citation:
 You can cite our work in IEEE format as:
 
-D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” in IEEE Access, 2020, doi: 10.1109/ACCESS.2020.2996563.
+D. P. Benalcazar, J. Zambrano, D. Bastias, C. A. Perez, and K. W. Bowyer, “A 3D Iris Scanner from a Single Image using Convolutional Neural Networks,” in IEEE Access, IEEE Access, vol. 8, no. 1, pp. 98584–98599, 2020, doi: 10.1109/ACCESS.2020.2996563.
