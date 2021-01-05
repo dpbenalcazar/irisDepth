@@ -1,11 +1,11 @@
 --------------Options--------------
 U_weight: 0.1
 activation: PReLU
-batchSize: 4
+batchSize: 2
 checkpoints_dir: ./checkpoints
 crop: False
 dataset_mode: unpaired
-dataset_root: 
+dataset_root: ../datasets/
 display_freq: 1
 display_id: 1
 display_port: 8097
@@ -14,12 +14,12 @@ display_winsize: 256
 drop_rate: 0
 feature_D_layers: 3
 flip: False
-gpu_ids: []
+gpu_ids: [0]
 image_D_layers: 4
 image_feature: 512
 image_nc: 3
 img_source_file: data/iris_256x256/PLR-256x256_tra.txt
-img_target_file: data/mini_LFVL
+img_target_file: data/micro_test/Real-256.txt
 init_type: kaiming
 isTrain: False
 lab_source_file: data/iris_256x256/PLD-256x256_tra.txt
@@ -35,7 +35,7 @@ norm: batch
 ntest: inf
 num_D: 1
 phase: test
-results_dir: ./results/
+results_dir: mini_test1
 rotation: False
 scale_rate: 0
 shuffle: True

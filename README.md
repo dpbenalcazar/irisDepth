@@ -26,7 +26,7 @@ conda install -c conda-forge imageio visdom jsonpatch dominate
 ```
 
 ##### Dependencies for the tensorflow envirnoment:
-You will need to install: tensorflow, keras, cuda, numpy, opencv,  pydot, scikit-image, and imageio 
+You will need to install: tensorflow, keras, cuda, numpy, opencv,  pydot, scikit-image, and imageio
 
 Using anaconda in ubuntu:
 ```
@@ -74,7 +74,7 @@ You can predict the depthmaps of all the images in a folder using:
 ```
 You can do the same using a .txt file with the list of the images:  
 ```
- python test_real.py --name irisT2Net --model test --dataset_root ../datasets/ --img_target_file data/mini_test/Real-256.txt --results_dir mini_test1
+ python test_real.py --name irisT2Net --model test --dataset_root ../datasets/ --img_target_file data/micro_test/Real-256.txt --results_dir mini_test1
 ```
 
 ##### Translating synthetic images:

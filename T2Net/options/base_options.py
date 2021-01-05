@@ -22,18 +22,18 @@ class BaseOptions():
         self.parser.add_argument('--model', type=str, default='wsupervised',
                                  help='choose which model to use, [supervised] | [wsupervised] | [test]')
         # data pattern define
-        self.parser.add_argument('--img_source_file', type=str, default='data/micro_test/SYN-256.txt', #'data/iris_256x256/PLR-256x256_tra.txt', #
+        self.parser.add_argument('--img_source_file', type=str, default='data/iris_256x256/PLR-256x256_tra.txt', #'data/PLR-192x192_tra.txt'
                                  help='training and testing dataset for source domain')
-        self.parser.add_argument('--img_target_file', type=str, default='data/micro_test/Real-256.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #
+        self.parser.add_argument('--img_target_file', type=str, default='data/iris_256x256/DD1-256x256_ent.txt', #'data/DD1-192x192_tra.txt'
                                  help='training and testing dataset for target domain')
-        self.parser.add_argument('--lab_source_file', type=str, default='data/micro_test/DEP-256.txt', #'data/iris_256x256/PLD-256x256_tra.txt', #
+        self.parser.add_argument('--lab_source_file', type=str, default='data/iris_256x256/PLD-256x256_tra.txt', #'data/PLD-192x192_tra.txt'
                                  help='training label for source domain')
-        self.parser.add_argument('--lab_target_file', type=str, default='data/micro_test/Real-256.txt', #'data/iris_256x256/DD1-256x256_ent.txt', #
+        self.parser.add_argument('--lab_target_file', type=str, default='data/iris_256x256/DD1-256x256_ent.txt', #'data/DD1-192x192_tra.txt'
                                  help='training label for target domain')
         self.parser.add_argument('--dataset_mode', type=str, default='unpaired',
                                  help='chooses how datasets are loaded. [paired| unpaired]')
-        self.parser.add_argument('--loadSize', type=list, default=[192, 192],   #[256, 256], #[192, 128],
-                                 help='load image into same size [256, 192]|[256, 256]|[640, 192]')
+        self.parser.add_argument('--loadSize', type=list, default=[256, 256],   #[192, 192], #[192, 128],
+                                 help='load image into same size [256, 192]|[640, 192]')
         self.parser.add_argument('--flip', action='store_true',
                                  help='if specified, do flip the image for data augmentation')
         self.parser.add_argument('--scale_rate', type=float, default=0,
@@ -53,21 +53,21 @@ class BaseOptions():
                                  help='# of input image channels')
         self.parser.add_argument('--label_nc', type=int, default=1,
                                  help='# of output label channels')
-        self.parser.add_argument('--ngf', type=int, default=64,
+        self.parser.add_argument('--ngf', type=int, default=80, #64
                                  help='# of encoder filters in first conv layer')
-        self.parser.add_argument('--ndf', type=int, default=64,
+        self.parser.add_argument('--ndf', type=int, default=80, #64
                                  help='# of discriminator filter in first conv layer')
-        self.parser.add_argument('--image_feature', type=int, default=512,
+        self.parser.add_argument('--image_feature', type=int, default=512,  #512
                                  help='the max channels for image features')
-        self.parser.add_argument('--num_D', type=int, default=1,
+        self.parser.add_argument('--num_D', type=int, default=1, #1
                                  help='# of number of the discriminator')
-        self.parser.add_argument('--transform_layers', type=int, default=9,
+        self.parser.add_argument('--transform_layers', type=int, default=9,  #9
                                  help='# of number of the down sample layers for transform network')
-        self.parser.add_argument('--task_layers', type=int, default=4,
+        self.parser.add_argument('--task_layers', type=int, default=5,  #4
                                  help='# of number of the down sample layers for task network')
-        self.parser.add_argument('--image_D_layers', type=int, default=3,
+        self.parser.add_argument('--image_D_layers', type=int, default=4,  #3
                                  help='# of number of the down layers for image discriminator')
-        self.parser.add_argument('--feature_D_layers', type=int, default=2,
+        self.parser.add_argument('--feature_D_layers', type=int, default=3,  #2
                                  help='# of number of the layers for features discriminator')
         self.parser.add_argument('--task_model_type', type=str, default='UNet', #'UNet'
                                  help='select model for task network [UNet] |[ResNet]')
@@ -92,7 +92,7 @@ class BaseOptions():
                                  help='visidom port of the web display')
         self.parser.add_argument('--display_single_pane_ncols', type=int, default=0,
                                  help='if positive, display all images in a single visidom web panel')
-        self.parser.add_argument('--dataset_root', type=str, default='../datasets/',
+        self.parser.add_argument('--dataset_root', type=str, default='',
                                  help='Carpeta raiz de base de datos desde atchivos .txt')
 
     def parse(self):
