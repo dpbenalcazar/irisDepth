@@ -22,6 +22,8 @@ class BaseOptions():
         self.parser.add_argument('--model', type=str, default='wsupervised',
                                  help='choose which model to use, [supervised] | [wsupervised] | [test]')
         # data pattern define
+        self.parser.add_argument('--dataset_root', type=str, default='',
+                help="Root dataset directory. It's path will be added to the image paths in the .txt files")
         self.parser.add_argument('--img_source_file', type=str, default='data/PLR-192x192_tra.txt',
                                  help='training and testing dataset for source domain')
         self.parser.add_argument('--img_target_file', type=str, default='data/DD1-192x192_tra.txt',
@@ -92,8 +94,6 @@ class BaseOptions():
                                  help='visidom port of the web display')
         self.parser.add_argument('--display_single_pane_ncols', type=int, default=0,
                                  help='if positive, display all images in a single visidom web panel')
-        self.parser.add_argument('--dataset_root', type=str, default='',
-                                 help='Carpeta raiz de base de datos desde atchivos .txt')
 
     def parse(self):
         if not self.initialized:
