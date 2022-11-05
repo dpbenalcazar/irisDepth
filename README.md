@@ -5,11 +5,14 @@ The paper has been published by the IEEE Access journal.
 
 Authors: Daniel Benalcazar, Jorge Zambrano, Diego Bastias, Claudio Perez and Kevin Bowyer
 
-Graphical Abstract: https://youtu.be/etUgDOl-U_w
+Video Summary on Youtube: [Graphical Abstract](https://youtu.be/etUgDOl-U_w), or [Extended Version](https://youtu.be/K4b2Vw8vk64).
 
-The code in this repository is heavily based on T2Net and DenseDepth
-  - T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is available at:https://github.com/lyndonzheng/Synthetic2Realistic
-  - DenseDepth by Ibraheem Alhashim and Peter Wonka is avalible at: https://github.com/ialhashim/DenseDepth
+The code in this repository is heavily based on T2Net and DenseDepth. Please visit the original repos as well.
+  - T2Net by Chuanxia Zheng, Tat-Jen Cham and Jianfei Cai is [available here](https://github.com/lyndonzheng/Synthetic2Realistic)
+  - DenseDepth by Ibraheem Alhashim and Peter Wonka is [available here](https://github.com/ialhashim/DenseDepth)
+
+### New Updates
+ - Links to weights and datasets are back online.
 
 ### Installing the repository
 We suggest that you create two separate environments, one for pytorch, and one for tensorflow. The main architecture for training with synthetic and real iris images is based on T2Net. This network is in pytorch. In order to improve the results, we trained DenseDepth over translated images by T2Net. We call this network irisDepth, and it is in tensorflow at the moment. If you are only interested in irisDepth, you only need tensorflow.
@@ -37,21 +40,17 @@ conda install -c conda-forge tensorflow-gpu=1.13 keras=2.2.4 cudatoolkit=10.0
 ```
 
 ##### Networks and weights:
-Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, will be available at:
-https://drive.google.com/drive/folders/1W6yxefISGz-kx6jJcNSFgD3-Ea9pbEZU?usp=sharing
+Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, are [available here](https://drive.google.com/file/d/1Vu-gKwu2uzMjILLnpGjFs-4T7laBjfUn/view?usp=sharing):
 
 ##### Real and synthetic iris datasets
-This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, please go to:
-https://drive.google.com/drive/folders/1o6uPcxTo7TefNoRWasr5BCI4RBftN5Xo?usp=sharing
+This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, please download it from [here](https://drive.google.com/file/d/1UPPx_jhRhpMXX7JvoM5wr31x0Et-voBW/view?usp=sharing).
 
-For the full synthetic image dataset with 72,000 images please go to:
-https://drive.google.com/open?id=1IyLHCaVNPKhlF2B2iX-y_mnN3Ay62q7P
+For the full synthetic image dataset with 72,000 images please go [here](https://drive.google.com/drive/folders/1W3KphosklcCah34RVCw_cSpaNoI4VQbE?usp=sharing).
 
 Unfortunately, we cannot publish the real iris dataset with 120 subjects and 26,520 images here. That is because we only have written consent from the volunteers to use the dataset in our paper, but we don't have consent to publish their images.  
 
 ##### Virtual iris dataset in blender
-The virtual iris dataset of 100 3D models sculpted in Blender is available at:
-https://drive.google.com/drive/folders/1teohEBFo03j3kErZn1DBspypa32sOhve?usp=sharing
+The virtual iris dataset of 100 3D models sculpted in Blender is available [here](https://drive.google.com/drive/folders/17xtr_ciUgWLOB5dJyo8TRvZwBaWC7IZ6?usp=sharing).
 
 
 ## Using T2Net
