@@ -40,17 +40,17 @@ conda install -c conda-forge tensorflow-gpu=1.13 keras=2.2.4 cudatoolkit=10.0
 ```
 
 ##### Networks and weights:
-Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, are [available here](https://drive.google.com/file/d/1Vu-gKwu2uzMjILLnpGjFs-4T7laBjfUn/view?usp=sharing):
+Then, you can clone this repository to your convenience. The networks and weigths, with the same folder structure as this repository, are [available here](https://1drv.ms/u/c/3725e5fb87343aec/EdT6zfQemQxDlEttwIHAR-EBH7pC6E4wAlxoDl5u2RBw-w?e=hiMFsq):
 
 ##### Real and synthetic iris datasets
-This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, please download it from [here](https://drive.google.com/file/d/1UPPx_jhRhpMXX7JvoM5wr31x0Et-voBW/view?usp=sharing).
+This repository contains a micro version of the datasets, with 15 real iris images and 16 synthetic images. For mini version with 60 real and 100 synthetic images, please download it from [here](https://1drv.ms/u/c/3725e5fb87343aec/EU0xBC_NedhMpvJFHGP58g0BXVxJaPiRQb42Q8j4xYoALg?e=64S0yh).
 
-For the full synthetic image dataset with 72,000 images please go [here](https://drive.google.com/drive/folders/1W3KphosklcCah34RVCw_cSpaNoI4VQbE?usp=sharing).
+For the full synthetic image dataset with 72,000 images please go [here](https://1drv.ms/f/c/3725e5fb87343aec/EmeHcl8gqCpHoEATMpXAyWwBzpcnwG3i46FU5WmznneGWw?e=UCnES7).
 
 Unfortunately, we cannot publish the real iris dataset with 120 subjects and 26,520 images here. That is because we only have written consent from the volunteers to use the dataset in our paper, but we don't have consent to publish their images.  
 
 ##### Virtual iris dataset in blender
-The virtual iris dataset of 100 3D models sculpted in Blender is available [here](https://drive.google.com/drive/folders/17xtr_ciUgWLOB5dJyo8TRvZwBaWC7IZ6?usp=sharing).
+The virtual iris dataset of 100 3D models sculpted in Blender is available [here](https://1drv.ms/u/c/3725e5fb87343aec/EWan8UMxbltOrGAzOL5iQTcBvOIufQEq7yu_WXMzACmBaw?e=BSkT0k).
 
 
 ## Using T2Net
